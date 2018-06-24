@@ -3,7 +3,6 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
-import webpages.BinaryTree;
 
 public class Solution {
     private final int [] empty ={}; // to return an empty array..in case u need to
@@ -16,35 +15,35 @@ public class Solution {
             
         }
     }
-    /*public class Node{
-        int val; Node left; Node right;
-        public Node(int val){
-            this.val = val;
-            this.left = null;
-            this.right = null;
-        }
-    }*/
       public static void main(String[] args) {
-        Solution s = new Solution();
+        Solution sol = new Solution();
         String line1 = "12243660";
         ArrayList <int []> ret = new ArrayList <int []>();
         String str = "vijay is boss";
-        String str2 = "vije";
+        String str2 = "vijay";
       //System.out.print(longestoftwo(str,str2));
         String [] split  = str.split(" ");
         int a =9; int b =8;
-        s.swap(a, b);
+        sol.swap(a, b);
         System.out.println(a);  // a nice illustration that a will not change 
 //        printarraystring(split);
-        int[] ns = new int[] {1,2,3,4,5};
+        int[] ns = new int[] {1,2,3,4,5,0};
         
-         
+        String reverse = sol.reverse_string(str);
+        System.out.println(reverse);
         
  
     }
      // SOME JAVA SNIPPETS
+      public String reverse_string(String str){
+          return new StringBuilder(str).reverse().toString();
+      }
       public int array_sum_withstream(int[] A ){
           return Arrays.stream(A).sum();
+      }
+      /*Note: Explore the possibilities of Array Stream */
+      public int min_in_array(int [] A){
+          return Arrays.stream(A).min().getAsInt();
       }
       public void swap(int a, int b){
         int temp = a;
