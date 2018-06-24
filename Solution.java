@@ -26,6 +26,7 @@ public class Solution {
         int a =9; int b =8;
         sol.swap(a, b);
         System.out.println(a);  // a nice illustration that a will not change 
+        System.out.println(str);
 //        printarraystring(split);
         int[] ns = new int[] {1,2,3,4,5,0};
         
