@@ -15,6 +15,41 @@ public class Solution {
             
         }
     }
+    // TODO : write the bfs of the tree ---iterative
+     public boolean isSameTree(TreeNode p, TreeNode q) {
+                return dfs(p).equals(dfs(q));
+
+     }
+    public String dfs(TreeNode p){  //dfs of a tree , returned as a string
+      //this is o(n) space and time
+      if(p == null) {   //edge case ... handling the case that the tree is null!!!!
+            return "";
+        }
+      StringBuilder str = new StringBuilder();
+      Stack <TreeNode> st = new Stack <TreeNode>();
+      st.push(p);
+      str.append(p.val+" ");
+
+      while(! st.isEmpty()){
+        TreeNode temp = st.pop();
+        if(temp.left != null){
+          st.push(temp.left);
+          str.append(temp.left.val+" ");   //append the left vall -- missed here..silly error
+        }
+        else
+          str.append("null");   //this is necessary for nodes having just 1 child or leaf node
+
+        if(temp.right != null){
+          st.push(temp.right);
+          str.append(temp.right.val+" ");
+        }
+        else
+          str.append("null");  
+
+      }
+      return str.toString();
+
+    }
       public static void main(String[] args) {
         Solution sol = new Solution();
         String line1 = "12243660";
